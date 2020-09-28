@@ -30,6 +30,11 @@ app = Sanic("Python Bitcoin Core Node Wrapper")
 
 ACCEPTABLE_RPC_METHODS = {
     "getblockchaininfo",
+    "listunspent",
+    "getwalletinfo",
+    "getreceivedbyaddress",
+    "gettransaction",
+    "getaddressinfo",
     "getnetworkinfo",
     "listwallets",
     "getblockfilter",
@@ -72,31 +77,32 @@ def make_success(result):
 
 
 async def make_singleton(method, params, new_path=None):
-    if method in ACCEPTABLE_RPC_METHODS:
-        if not params:
-            params = []
-        try:
-            for param in params:
-                if "rescan" in params:
-                    print("*" * 88)
-                    print("RESCAN DATA FOUND")
-            if new_path:
-                rpc._url = f"http://{CORE_HOST}:{CORE_PORT}/{new_path}"
-
-            res = await rpc.acall(method, params)
-
-            if new_path:
-                # Set pack bath. Check for race conditions and/or migrate away from this library!?
-                rpc._url = f"http://{CORE_HOST}:{CORE_PORT}"
-            print("SUCCESS", res)
-            return make_success(res)
-        except RPCError as e:
-            print("ERROR", e.code, e.message)
-            return make_error(code=e.code, message=e.message)
-
-    else:
+    if method not in ACCEPTABLE_RPC_METHODS:
         print("Unsupported RPC call", method)
         return make_error(message="Unsupported RPC call: %s" % method)
+
+    if not params:
+        params = []
+    try:
+        for param in params:
+            if type(param) is dict:
+                if "rescan" in param:
+                    param["rescan"] = False
+                    print("*" * 88)
+                    print("RESCAN DATA FOUND")
+        if new_path:
+            rpc._url = f"http://{CORE_HOST}:{CORE_PORT}/{new_path}"
+
+        res = await rpc.acall(method, params)
+
+        if new_path:
+            # Set pack bath. Check for race conditions and/or migrate away from this library!?
+            rpc._url = f"http://{CORE_HOST}:{CORE_PORT}"
+        print("SUCCESS", res)
+        return make_success(res)
+    except RPCError as e:
+        print("ERROR", e.code, e.message)
+        return make_error(code=e.code, message=e.message)
 
 
 # This is a catch-all in case of bizarre /wallet behavior from specter-desktop
