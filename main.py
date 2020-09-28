@@ -1,10 +1,11 @@
-from sanic import Sanic
-from sanic.response import json
-
 from bitcoinrpc import BitcoinRPC
 from bitcoinrpc.bitcoin_rpc import RPCError
 
 from os import environ
+
+from sanic import Sanic
+from sanic.response import json
+
 
 CORE_HOST = environ.get("CORE_HOST", "localhost")
 CORE_PORT = int(environ.get("CORE_PORT", "18332"))  # default to testnet
@@ -29,30 +30,29 @@ rpc = BitcoinRPC(CORE_HOST, CORE_PORT, CORE_USER, CORE_PASSWORD)
 app = Sanic("Python Bitcoin Core Node Wrapper")
 
 ACCEPTABLE_RPC_METHODS = {
+    "createwallet",
+    "deriveaddresses",
+    "getaddressinfo",
+    "getbalances",
     "getblockchaininfo",
-    "listunspent",
-    "getwalletinfo",
+    "getblockcount",
+    "getblockhash",
+    "getmempoolinfo",
+    "getnetworkinfo",
     "getreceivedbyaddress",
     "gettransaction",
-    "getaddressinfo",
-    "getnetworkinfo",
-    "listwallets",
+    "getwalletinfo",
     "getblockfilter",
+    "importmulti",
     "loadwallet",
+    "listsinceblock",
+    "listtransactions",
+    "listunspent",
     "listwalletdir",
     "listwallets",
-    "listtransactions",
-    "getblockcount",
-    "deriveaddresses",
-    "getmempoolinfo",
+    "scantxoutset",
     "setlabel",
     "uptime",
-    "getbalances",
-    "listsinceblock",
-    "getblockhash",
-    "scantxoutset",
-    "createwallet",
-    "importmulti",
 }
 
 
