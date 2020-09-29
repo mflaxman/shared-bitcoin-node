@@ -41,6 +41,7 @@ ACCEPTABLE_RPC_METHODS = {
     "getnetworkinfo",
     "getreceivedbyaddress",
     "gettransaction",
+    "gettxoutproof",
     "getwalletinfo",
     "getblockfilter",
     "importmulti",
