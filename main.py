@@ -38,6 +38,7 @@ ACCEPTABLE_RPC_METHODS = {
     "getblockcount",
     "getblockhash",
     "getmempoolinfo",
+    "getmininginfo",
     "getnetworkinfo",
     "getpeerinfo",
     "getreceivedbyaddress",
