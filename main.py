@@ -41,6 +41,7 @@ ACCEPTABLE_RPC_METHODS = {
     "getmempoolinfo",
     "getmininginfo",
     "getnetworkinfo",
+    "getnewaddress",
     "getpeerinfo",
     "getreceivedbyaddress",
     "gettransaction",
