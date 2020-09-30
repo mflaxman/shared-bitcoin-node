@@ -47,6 +47,7 @@ ACCEPTABLE_RPC_METHODS = {
     "gettxoutproof",
     "getwalletinfo",
     "getblockfilter",
+    "help",  # this output will not be 100% accurate
     "importmulti",
     "loadwallet",
     "listsinceblock",
