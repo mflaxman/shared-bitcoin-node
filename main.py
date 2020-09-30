@@ -39,6 +39,7 @@ ACCEPTABLE_RPC_METHODS = {
     "getblockhash",
     "getmempoolinfo",
     "getnetworkinfo",
+    "getpeerinfo",
     "getreceivedbyaddress",
     "gettransaction",
     "gettxoutproof",
