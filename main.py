@@ -30,6 +30,7 @@ rpc = BitcoinRPC(CORE_HOST, CORE_PORT, CORE_USER, CORE_PASSWORD)
 app = Sanic("Python Bitcoin Core Node Wrapper")
 
 ACCEPTABLE_RPC_METHODS = {
+    "combinepsbt",
     "createwallet",
     "decodepsbt",
     "deriveaddresses",
