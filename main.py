@@ -63,6 +63,7 @@ ACCEPTABLE_RPC_METHODS = {
     "scantxoutset",
     "setlabel",
     "uptime",
+    "walletcreatefundedpsbt",
 }
 
 
