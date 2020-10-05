@@ -35,6 +35,7 @@ ACCEPTABLE_RPC_METHODS = {
     "decodepsbt",
     "deriveaddresses",
     "estimatesmartfee",
+    "finalizepsbt",
     "getaddressesbylabel",
     "getaddressinfo",
     "getbalances",
