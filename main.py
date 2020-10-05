@@ -31,6 +31,7 @@ app = Sanic("Python Bitcoin Core Node Wrapper")
 
 ACCEPTABLE_RPC_METHODS = {
     "createwallet",
+    "decodepsbt",
     "deriveaddresses",
     "estimatesmartfee",
     "getaddressesbylabel",
