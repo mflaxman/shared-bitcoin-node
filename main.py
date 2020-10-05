@@ -54,6 +54,7 @@ ACCEPTABLE_RPC_METHODS = {
     "importmulti",
     "loadwallet",
     "listlabels",
+    "listlockunspent",
     "listsinceblock",
     "listtransactions",
     "listunspent",
