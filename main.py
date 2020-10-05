@@ -65,6 +65,7 @@ ACCEPTABLE_RPC_METHODS = {
     "listwalletdir",
     "listwallets",
     "scantxoutset",
+    "sendrawtransaction",
     "setlabel",
     "testmempoolaccept",
     "uptime",
