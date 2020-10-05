@@ -33,6 +33,7 @@ ACCEPTABLE_RPC_METHODS = {
     "createwallet",
     "deriveaddresses",
     "estimatesmartfee",
+    "getaddressesbylabel",
     "getaddressinfo",
     "getbalances",
     "getblockchaininfo",
