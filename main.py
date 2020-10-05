@@ -51,6 +51,7 @@ ACCEPTABLE_RPC_METHODS = {
     "help",  # this output will not be 100% accurate
     "importmulti",
     "loadwallet",
+    "listlabels",
     "listsinceblock",
     "listtransactions",
     "listunspent",
