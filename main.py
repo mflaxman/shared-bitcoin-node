@@ -33,6 +33,7 @@ ACCEPTABLE_RPC_METHODS = {
     "combinepsbt",
     "createwallet",
     "decodepsbt",
+    "decoderawtransaction",
     "deriveaddresses",
     "estimatesmartfee",
     "finalizepsbt",
