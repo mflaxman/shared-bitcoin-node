@@ -66,6 +66,7 @@ ACCEPTABLE_RPC_METHODS = {
     "setlabel",
     "uptime",
     "walletcreatefundedpsbt",
+    "walletprocesspsbt",
 }
 
 
